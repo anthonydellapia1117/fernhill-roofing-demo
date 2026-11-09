@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fernhill Roofing Co. | Philadelphia rowhome roofs (concept site)</title>
+<meta name="description" content="Concept site for a fictional Philadelphia roofer: flat rowhome roofs, mansard fronts, box gutters, and slate.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F3C42C">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23F3C42C'/%3E%3Cpath d='M5 24V13h3v1.5L27 16v8' fill='none' stroke='%2317140F' stroke-width='2.5' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Bungee&family=Bungee+Shade&display=swap">
+<link rel="stylesheet" href="styles.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#request">Skip to the inspection request</a>
+
+<header class="board board--top" id="top">
+  <svg class="pinstripe" aria-hidden="true"><rect class="pinstripe__outer" pathLength="1" rx="14"/><rect class="pinstripe__inner" pathLength="1" rx="9"/></svg>
+  <div class="board__inner">
+    <p class="board__hook">Roof repair for Philadelphia rowhomes, twins, and stone houses.</p>
+    <h1 class="sign">
+      <span class="lettered">
+        <span class="lettered__shade" aria-hidden="true">Fernhill</span>
+        <span class="lettered__fill">Fernhill</span>
+      </span>
+      <span class="sign__sub">Roofing Co.</span>
+    </h1>
+    <ul class="trades" aria-label="Roofs we work on">
+      <li>Flat roofs</li><li>Mansard fronts</li><li>Box gutters</li><li>Slate</li>
+    </ul>
+    <a class="board__phone" href="tel:+12155550142"><span class="board__phone-label">Leaking? Call</span> <span class="num">215-555-0142</span></a>
+    <nav class="board__nav" aria-label="Sections">
+      <a href="#roofs">Your roof</a>
+      <a href="#leaks">Where it leaks</a>
+      <a href="#area">Where we work</a>
+      <a href="#request">Request an inspection</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="window" id="request" aria-labelledby="request-title">
+    <div class="window__frame">
+      <h2 class="leaf" id="request-title">Tell us what's going on up there</h2>
+      <form class="card" id="request-form" novalidate>
+        <div class="field">
+          <label for="f-problem">What's happening</label>
+          <select id="f-problem" name="problem" required>
+            <option value="">Choose one</option>
+            <option>Water coming in</option>
+            <option>Missing or loose roofing</option>
+            <option>Gutter overflowing</option>
+            <option>Inspection before a sale</option>
+            <option>Something else</option>
+          </select>
+          <p class="field__error" id="e-problem" hidden>Pick what's happening so we know what to bring.</p>
+        </div>
+        <div class="field">
+          <label for="f-roof">Roof type</label>
+          <select id="f-roof" name="roof">
+            <option value="">Not sure</option>
+            <option value="flat">Flat roof</option>
+            <option value="mansard">Mansard front</option>
+            <option value="gutter">Box gutter</option>
+            <option value="slate">Slate roof</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-zip">ZIP code</label>
+          <input id="f-zip" name="zip" inputmode="numeric" autocomplete="postal-code" maxlength="5" placeholder="19125" required>
+          <p class="field__error" id="e-zip" hidden>Enter a Philadelphia ZIP, like 19125.</p>
+        </div>
+        <div class="field">
+          <label for="f-phone">Your phone</label>
+          <input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="215-555-0100" required>
+          <p class="field__error" id="e-phone" hidden>Enter a 10-digit phone number so we can call back.</p>
+        </div>
+        <button class="btn btn--action" type="submit">Send to Fernhill</button>
+        <p class="card__note">Demo form on a concept site. Nothing is sent.</p>
+      </form>
+    </div>
+  </section>
+
+  <section class="roofs wall" id="roofs" aria-labelledby="roofs-title">
+    <div class="wrap">
+      <h2 class="wall__head" id="roofs-title">Which roof is yours?</h2>
+      <p class="lede">Pick the one that looks like yours. Each fails in its own way and needs a different fix.</p>
+      <div class="picker" role="tablist" aria-label="Roof types">
+        <button class="picker__tab" role="tab" id="tab-flat" aria-selected="true" aria-controls="roof-panel" data-roof="flat">
+          <svg viewBox="0 0 120 80" aria-hidden="true"><path d="M10 74V26h12v5l88 9v34"/><path d="M8 26h16"/><path d="M24 35l84 8" class="coat"/><path d="M30 74V54h12v20M66 74V54h12v20"/></svg>
+          <span>Flat roof</span>
+        </button>
+        <button class="picker__tab" role="tab" id="tab-mansard" aria-selected="false" aria-controls="roof-panel" data-roof="mansard" tabindex="-1">
+          <svg viewBox="0 0 120 80" aria-hidden="true"><path d="M10 74V44h4l10-28 86 9v49"/><path d="M16 38l8-2M18 31l9-2M21 24l8-2"/><path d="M28 74V56h12v18M66 74V56h12v18"/></svg>
+          <span>Mansard front</span>
+        </button>
+        <button class="picker__tab" role="tab" id="tab-gutter" aria-selected="false" aria-controls="roof-panel" data-roof="gutter" tabindex="-1">
+          <svg viewBox="0 0 120 80" aria-hidden="true"><path d="M14 74V34H4V20"/><path d="M4 20h6v8h10v-8"/><path d="M20 22l88 10v42"/><path d="M7 25c0 3 2 5 2 8" class="drip"/><path d="M30 74V56h12v18M66 74V56h12v18"/></svg>
+          <span>Box gutter</span>
+        </button>
+        <button class="picker__tab" role="tab" id="tab-slate" aria-selected="false" aria-controls="roof-panel" data-roof="slate" tabindex="-1">
+          <svg viewBox="0 0 120 80" aria-hidden="true"><path d="M8 40L60 8l52 32"/><path d="M14 74V36M106 74V36"/><path d="M84 23V10h8v18"/><path d="M28 30l8-5M44 20l8-5M52 30l8-5M68 20l8-5M76 34l8-5"/><path d="M50 74V54h20v20"/></svg>
+          <span>Slate roof</span>
+        </button>
+      </div>
+      <div class="panel" role="tabpanel" id="roof-panel" aria-labelledby="tab-flat" tabindex="0">
+        <h3 class="panel__name" data-field="name">Flat roof</h3>
+        <dl class="labelgrid">
+          <div><dt>Where you see it</dt><dd data-field="where">Rowhomes and twins all over the city. From the street you only see the cornice. Up top it's a low-slope membrane, usually painted silver.</dd></div>
+          <div><dt>What goes wrong</dt><dd data-field="fails">The silver coat chalks and cracks, seams open at the parapet, and water ponds in low spots until it finds a way through.</dd></div>
+          <div><dt>What we do</dt><dd data-field="fix">Reseal the seams and flashing, recoat, or put on a new membrane when the old one is done. We tell you which, and why.</dd></div>
+        </dl>
+        <button class="btn btn--leaf" type="button" data-use-roof>Use this roof in my request</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="leaks" id="leaks" aria-labelledby="leaks-title">
+    <div class="wrap leaks__grid">
+      <div class="leaks__text">
+        <h2 id="leaks-title">Where flat roofs leak</h2>
+        <p class="lede">The stain on your ceiling is often feet away from where the water got in. It runs along the deck first. These five spots are where we look.</p>
+        <ol class="leaks__list">
+          <li><strong>Coping on the parapet.</strong> Cracked or loose coping lets water into the top of the wall.</li>
+          <li><strong>Flashing at the parapet.</strong> Where the roof turns up the wall. A common leak point once the seal lets go.</li>
+          <li><strong>Seam over the party wall.</strong> Your roof meets your neighbor's here. Two roofs done in different years often meet badly.</li>
+          <li><strong>Low spot.</strong> Water that sits for days works into the seams. It leaves a ring of dirt after it dries.</li>
+          <li><strong>Scupper and downspout.</strong> A clogged outlet backs water onto the roof and over the edge of the membrane.</li>
+        </ol>
+      </div>
+      <figure class="drawing">
+        <svg viewBox="0 0 800 360" role="img" aria-labelledby="drawing-cap">
+          <g class="dw-wall">
+            <rect x="60" y="92" width="40" height="268"/>
+            <rect x="700" y="172" width="40" height="188"/>
+          </g>
+          <rect class="dw-coping" x="50" y="80" width="60" height="12" rx="2"/>
+          <path class="dw-deck" d="M100 142 L700 182"/>
+          <path class="dw-joist" d="M160 146v14M240 151v14M320 157v14M400 162v14M480 167v14M560 173v14M640 178v14"/>
+          <path class="dw-ceiling" d="M100 214H700"/>
+          <path class="dw-water" d="M392 151 Q430 168 468 156 L468 156 Q430 160 392 151Z"/>
+          <path class="dw-membrane" d="M100 104 V134 L392 152 Q430 164 468 156 L700 172"/>
+          <path class="dw-coat" d="M104 128 L392 146 Q430 158 468 150 L696 166"/>
+          <path class="dw-seam" d="M250 138 v-10 h18 v12"/>
+          <rect class="dw-head" x="740" y="160" width="28" height="24" rx="2"/>
+          <path class="dw-spout" d="M754 184 V360"/>
+          <path class="dw-drop" d="M392 214 q-6 12 0 16 q6 -4 0 -16Z"/>
+          <text class="dw-label" x="108" y="236">Ceiling</text>
+          <text class="dw-label" x="14" y="72">Street side</text>
+          <text class="dw-label" x="676" y="150">Back</text>
+          <g class="dw-marks">
+            <g transform="translate(80 58)"><circle r="15"/><text y="5">1</text></g>
+            <g transform="translate(130 110)"><circle r="15"/><text y="5">2</text></g>
+            <g transform="translate(259 106)"><circle r="15"/><text y="5">3</text></g>
+            <g transform="translate(430 128)"><circle r="15"/><text y="5">4</text></g>
+            <g transform="translate(754 132)"><circle r="15"/><text y="5">5</text></g>
+          </g>
+        </svg>
+        <figcaption id="drawing-cap">Section through a flat rowhome roof, street side on the left, with the five leak points numbered. Drawing for illustration.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="visit wall" aria-labelledby="visit-title">
+    <div class="wrap">
+      <h2 class="wall__head" id="visit-title">How a visit goes</h2>
+      <ol class="visit__rows">
+        <li><h3>You call or send the card</h3><p>We call back to set a time that works for you.</p></li>
+        <li><h3>We go up on the roof</h3><p>Every problem we find gets a photo, so you see what we see.</p></li>
+        <li><h3>You get the scope in writing</h3><p>What needs fixing now, what can wait, and what the work involves, before anything starts.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="area" id="area" aria-labelledby="area-title">
+    <div class="wrap">
+      <h2 class="leaf" id="area-title">Where we work</h2>
+      <ul class="area__list">
+        <li>Fishtown</li><li>Kensington</li><li>Port Richmond</li><li>Northern Liberties</li><li>Bella Vista</li><li>Point Breeze</li><li>Grays Ferry</li><li>Germantown</li><li>Mt. Airy</li><li>East Falls</li><li>Manayunk</li><li>Roxborough</li><li>Frankford</li><li>Mayfair</li>
+      </ul>
+      <p class="area__note">Service area is demo content for a fictional company.</p>
+    </div>
+  </section>
+
+  <section class="board board--close" aria-labelledby="close-title">
+    <svg class="pinstripe" aria-hidden="true"><rect class="pinstripe__outer" pathLength="1" rx="14"/><rect class="pinstripe__inner" pathLength="1" rx="9"/></svg>
+    <div class="board__inner">
+      <h2 class="close__title" id="close-title">Water coming in right now?</h2>
+      <a class="close__phone" href="tel:+12155550142">
+        <span class="lettered">
+          <span class="lettered__shade" aria-hidden="true">215-555-0142</span>
+          <span class="lettered__fill">215-555-0142</span>
+        </span>
+      </a>
+      <p class="close__alt">Put a bucket under it, move what you can, then call. Or <a href="#request">send the card</a> and we'll call you.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <p><strong>Fernhill Roofing Co. is a fictional company.</strong> This is a concept site built by Philly Trade Sites to show what a local trade website can be. The phone number is a reserved fictional 555 number, and the form sends nothing.</p>
+</footer>
+
+<div class="throwup" id="throwup" data-visible="false" inert>
+  <a class="throwup__mark" href="#top">Fernhill</a>
+  <a class="throwup__call" href="tel:+12155550142">Call 215-555-0142</a>
+</div>
+
+<div class="dock">
+  <a class="dock__call" href="tel:+12155550142">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3.5l2.6 3.7-1.7 2.4c1.2 2.6 3.2 4.7 5.9 5.9l2.4-1.7 3.7 2.6-1.3 3.5c-.3.7-1 1.1-1.7 1C9.9 20.2 3.8 14.1 3.1 7.5c-.1-.7.3-1.4 1-1.7z"/></svg>
+    Call now
+  </a>
+  <button class="dock__menu" type="button" aria-expanded="false" aria-controls="drawer">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    Menu
+  </button>
+</div>
+
+<div class="scrim" id="scrim" data-open="false"></div>
+<div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Menu" data-open="false" inert>
+  <div class="drawer__handle" aria-hidden="true"></div>
+  <nav aria-label="Menu">
+    <a href="#roofs">Your roof</a>
+    <a href="#leaks">Where it leaks</a>
+    <a href="#area">Where we work</a>
+    <a href="#request">Request an inspection</a>
+  </nav>
+  <a class="drawer__call" href="tel:+12155550142">Call 215-555-0142</a>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite" data-open="false">
+  <p id="toast-text">Demo site: nothing was sent.</p>
+  <button class="toast__close" type="button" aria-label="Dismiss">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+</div>
+</body>
+</html>
