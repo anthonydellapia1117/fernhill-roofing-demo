@@ -133,6 +133,7 @@
   const main = $("#main");
 
   function openDrawer() {
+    hideToast(); // the toast sits above the drawer and would cover its links
     drawer.inert = false;
     drawer.style.transform = "";
     drawer.dataset.open = "true";
