@@ -24,7 +24,6 @@
 
   /* type */
   --sign: "Bungee", "Arial Black", sans-serif;
-  --shade-face: "Bungee Shade", "Arial Black", sans-serif;
   --read: "Barlow", system-ui, sans-serif;
 
   /* rhythm */
@@ -83,7 +82,7 @@ p { margin: 0; text-wrap: pretty; }
 .sign { margin-top: var(--space-2); line-height: 0.92; }
 .lettered { position: relative; display: inline-block; }
 .lettered__fill { position: relative; font-family: var(--sign); font-weight: 400; color: var(--ink); }
-.lettered__shade { position: absolute; inset: 0; font-family: var(--shade-face); font-weight: 400; color: var(--shade); white-space: nowrap; }
+.lettered__shade { position: absolute; inset: 0; font-family: var(--sign); font-weight: 400; color: var(--shade); white-space: nowrap; text-shadow: 0.008em 0.008em 0 var(--shade), 0.016em 0.016em 0 var(--shade), 0.024em 0.024em 0 var(--shade), 0.032em 0.032em 0 var(--shade), 0.040em 0.040em 0 var(--shade), 0.048em 0.048em 0 var(--shade), 0.056em 0.056em 0 var(--shade), 0.064em 0.064em 0 var(--shade); }
 .sign .lettered { font-size: clamp(2.6rem, 12.4vw, 6rem); letter-spacing: 0.01em; }
 .sign__sub { display: block; margin-top: 0.35rem; font: 400 clamp(1.15rem, 3.4vw, 2rem)/1 var(--sign); letter-spacing: 0.04em; }
 
